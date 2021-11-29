@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4d3b23d415.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./space.css">
     <title>Workspace</title>
 </head>
-<body>
+<body onload="enableEditMode();">
     <div class="sapce-container">
         <section class="section-1">
             <div class="top-content">
@@ -50,12 +51,107 @@
                 </div>
                 <div class="right-content-container">
                     <div class="right-content">
-                        Text Editor
-                        <!-- Text Editor -->
+                        <div class="text-editor">
+                            <div class="text-editor-top-menu">
+                                <button onclick="executeCommand('bold');"><i class="fa fa-bold"></i></button>
+                            <button onclick="executeCommand('italic');"><i class="fa fa-italic"></i></button>
+                            <button onclick="executeCommand('underline');"><i class="fa fa-underline"></i></button>
+                            <button onclick="executeCommand('strikeThrough');"><i class="fa fa-strikethrough"></i></button>
+                            <button onclick="executeCommand('justifyLeft');"><i class="fa fa-align-left"></i></button>
+                            <button onclick="executeCommand('justifyRight');"><i class="fa fa-align-right"></i></button>
+                            <button onclick="executeCommand('justifyCenter');"><i class="fa fa-align-center"></i></button>
+                            <button onclick="executeCommand('justifyFull');"><i class="fa fa-align-justify"></i></button>
+                            <button onclick="executeCommand('cut');"><i class="fa fa-cut"></i></button>
+                            <button onclick="executeCommand('copy');"><i class="fa fa-copy"></i></button>
+                            <button onclick="executeCommand('indent');"><i class="fa fa-indent"></i></button>
+                            <button onclick="executeCommand('outdent');"><i class="fa fa-dedent"></i></button>
+                            <button onclick="executeCommand('subscript');"><i class="fa fa-subscript"></i></button>
+                            <button onclick="executeCommand('superscript');"><i class="fa fa-superscript"></i></button>
+                            <button onclick="executeCommand('undo');"><i class="fa fa-undo"></i></button>
+                            <button onclick="executeCommand('redo');"><i class="fa fa-repeat"></i></button>
+                            <button onclick="executeCommand('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
+                            <button onclick="executeCommand('insertOrderedList');"><i class="fa fa-list-ol"></i></button>   
+                            <button onclick="executeCommand('insertParagraph');"><i class="fa fa-paragraph"></i></button>
+                            <select onchange="executeCommandWithArg('formatBlock',this.value);">
+                                <option value="H1">H1</option>
+                                <option value="H2">H2</option>
+                                <option value="H3">H3</option>
+                                <option value="H4">H4</option>
+                                <option value="H5">H5</option>
+                                <option value="H6">H6</option>
+                            </select>  
+                            <button onclick="executeCommand('insertHorizontalRule');">HR</i></button>  
+                            <button onclick="executeCommand('createLink',prompt('Enter a URL',''));"><i class="fa fa-link"></i></button>  
+                            <button onclick="executeCommand('unLink');"><i class="fa fa-unlink"></i></button>  
+                            <button onclick="toggleSource();"><i class="fa fa-code"></i></button>  
+                            <button onclick="toggleEdit();">toggle Edit</button>
+                            </div>
+                            <div class="text-editor-bottom-menu">
+                                <select onchange="executeCommandWithArg('fontName',this.value);">
+                                    <option value="Aerial">Aerial</option>
+                                    <option value="Comic Sans MS">Comic Sans MS</option>
+                                    <option value="Courier">Courier</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Verdana">Verdana</option>
+                                </select>  
+                                <select onchange="executeCommandWithArg('fontSize',this.value);">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                                Fore Color: <input type="color" onchange="executeCommandWithArg('foreColor',this.value);" />
+                                Background: <input type="color" onchange="executeCommandWithArg('hiliteColor',this.value);" />   
+                                <button onclick="executeCommandWithArg('insertImage',prompt('Enter a image URL',''));"><i class="fa fa-file-image-o"></i></button>   
+                                <button onclick="executeCommand('selectAll')">Select All</i></button> 
+                            </div>
+                        </div>
+                        <iframe name="richTextField" style="width: 820px; height: 480px; margin-top: 20px; border: 2px solid salmon;"></iframe>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+    <script type="text/javascript">
+    var showingSourceCode= false;
+    var isInEditMode=true;
+
+    function enableEditMode(){
+        richTextField.document.designMode = 'on';
+    }
+
+    function executeCommand(command){
+        richTextField.document.executeCommand(command, false, null);
+    }
+
+    function executeCommandWithArg(command, arg){
+        richTextField.document.executeCommand(command, false, null);
+    }
+
+    function toggleSource(){
+        if(showingSourceCode){
+            richTextField.document.getElementsByTagName('body')[0].innerHTML=richTextField.document.getElementsByTagName('body')[0].textContent;
+            showingSourceCode=false;
+        }else{
+            richTextField.document.getElementsByTagName('body')[0].textContent=richTextField.document.getElementsByTagName('body')[0].innerHTML;
+            showingSourceCode=true;
+        }
+    }
+
+    function toggleEdit(){
+        if(isInEditMode){
+            richTextField.document.designMode = 'off';
+            isInEditMode=false;
+        }else{
+            richTextField.document.designMode = 'on';
+            isInEditMode=true;
+        }
+    }
+
+    </script>
 </body>
 </html>
