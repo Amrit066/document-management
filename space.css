@@ -4,6 +4,9 @@
     box-sizing: border-box;
     transition: 0.5s;
 }
+body{
+    background-color: rgb(255, 216, 212);
+}
 
 /* CSS FOR SECTION-1 */
 
@@ -18,7 +21,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .section-1>.top-content>.left-content-container{
     width: 30%;
@@ -30,6 +33,7 @@
     margin-left: 10px;
     border: 2px solid salmon;
     border-radius: 10px;
+    background-color: rgb(255, 191, 184);
 }
 .section-1>.top-content>.left-content-container>.top-left-content{
     width: 100%;
@@ -44,7 +48,14 @@
 .section-1>.top-content>.left-content-container>.top-left-content>.profile-pic{
     width: 18%;
     height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px dashed rebeccapurple;
+    border-radius: 50%;
+}.section-1>.top-content>.left-content-container>.top-left-content>.profile-pic>svg{
+    width: 78%;
+    height: 78%;
     border-radius: 50%;
 }
 .section-1>.top-content>.left-content-container>.top-left-content>.profile-info{
@@ -146,30 +157,385 @@
     border-radius: 10px;
 }
 .section-1>.top-content>.right-content-container>.right-content{
+    width: 812px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .section-1>.top-content>.right-content-container>.right-content>.text-editor{
-    width: 820px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 .section-1>.top-content>.right-content-container>.right-content>.text-editor .text-editor-top-menu{
-    width: 100%;
+    width: 99%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding: 10px 5px;
+    background-color: rgb(255, 191, 184);
+    border-radius: 5px;
 }
 .section-1>.top-content>.right-content-container>.right-content>.text-editor .text-editor-bottom-menu{
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 191, 184);
+    border-radius: 5px;
+}
+
+/* CSS FOR SECTION-2 */
+
+.section-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+.section-2>.bottom-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.section-2>.bottom-content>.left-content-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid rgb(172, 157, 157);
+    border-radius: 5px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+}
+.section-2>.bottom-content>.left-content-container>.left-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-top-content{
+    width: 830px;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content{
+    width: 810px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background-color: salmon;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-left-content{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-left-content>button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(247, 193, 187);
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-left-content>button:hover{
+    cursor: pointer;
+    background-color: salmon;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-right-content{
+    position: relative;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid red;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-right-content>button{
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: rgb(247, 193, 187);
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-right-content>button:hover{
+    cursor: pointer;
+    background-color: salmon;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-right-content>.smilies{
+    position: absolute;
+    bottom: -42px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(20, 18, 18);
+    border-radius: 5px;
+}
+.section-2>.bottom-content>.left-content-container>.left-content>.left-bottom-content>.left-bottom-content-right-content>.smilies>i{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(247, 193, 187);
+}
+.section-2>.bottom-content>.right-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+    border: 2px solid salmon;
+    border-radius: 5px;
+    background-color: rgb(253, 173, 165);
+    margin-left: 270px;
+}
+.section-2>.bottom-content>.right-container>.right-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5px;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>.current-workspace-name{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px 5px;
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(160, 154, 154);
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>.current-workspace-name>p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(68, 64, 64);
+    padding-left: 10px 10px;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>.associated-team-members{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px 5px;
+    padding: 10px 0;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>.associated-team-members>ul{
+    isplay: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px 5px;
+    padding: 10px 0;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>.associated-team-members>ul>li{
+    list-style: square;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(68, 64, 64);
+    margin: 8px 5px;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    padding: 5px 25px;
+    background-color:rgb(233, 223, 223) ;
+    border-radius: 10px;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>button::after{
+    display: none;
+    content: "Add member";
     width: 100%;
+    position: absolute;
+    top: -30px;
+    left: -8px;
+    font-size: 10px;
+    color: rgb(70, 68, 68);
+    border: 2px solid rgb(172, 168, 168);
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>button:hover{
+    cursor: pointer;
+    background-color:rgb(252, 146, 113)
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>button:active{
+    background-color:rgb(245, 162, 137)
+}
+.section-2>.bottom-content>.right-container>.right-content>.right-top-content>button:hover > .section-2>.bottom-content>.right-container>.right-content>.right-top-content>button::after{
+    display: block;
+}
+
+
+/* CSS FOR FOOTER */
+
+footer{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgb(197, 191, 191);
+    background-color: rgb(255, 191, 184);
+    margin-top: 80px;
+}
+footer>.footer-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>.footer-container>.top-content{
+    width: 100%;
+    height: 70%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
+footer>.footer-container>.top-content>.left-content{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>.footer-container>.top-content>.left-content>.top-content{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+footer>.footer-container>.top-content>.left-content>.top-content>p{
+    font-family: var(--primar-font);
+    font-weight: bold;
+    color: rgb(88, 60, 241);
+    font-size: 2em;
+}
+footer>.footer-container>.top-content>.left-content>.bottom-content{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer>.footer-container>.top-content>.left-content>.bottom-content>ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+footer>.footer-container>.top-content>.left-content>.bottom-content>ul>li{
+    list-style: none;
+    font-family: var(--primar-font);
+    color: rgb(10, 10, 10);
+    font-size: 1.2em;
+}
+footer>.footer-container>.top-content>.right-content{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>.footer-container>.top-content>.right-content>.top-content{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+footer>.footer-container>.top-content>.right-content>.top-content>p{
+    font-family: var(--primar-font);
+    font-weight: bold;
+    color: rgb(88, 60, 241);
+    font-size: 2em;
+}
+footer>.footer-container>.top-content>.right-content>.bottom-content{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer>.footer-container>.top-content>.right-content>.bottom-content>ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+footer>.footer-container>.top-content>.right-content>.bottom-content>ul>a{
+    width: 90%;
+    height: 40%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+footer>.footer-container>.top-content>.right-content>.bottom-content>ul>a>li{
+    list-style: none;
+    font-family: var(--primar-font);
+    color:rgb(12, 12, 12);
+    font-size: 1.2em;
+}
+footer>.footer-container>.top-content>.right-content>.bottom-content>ul>a>li:hover{
+    color:salmon;
+}
+footer>.footer-container>.middle-content{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>.footer-container>.middle-content>a{
+    width: 20%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: salmon;
+    border-radius: 5em;
+}
+/* footer>.footer-container>.middle-content>a>i{
+    display: none;
+} */
+footer>.footer-container>.bottom-content{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer>.footer-container>.bottom-content>p{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.6px;
+}
+
+
